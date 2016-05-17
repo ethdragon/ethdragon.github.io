@@ -23,8 +23,8 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 queue()
-    .defer(d3.json, "/static/json/zips_us_topo.json")
-    .defer(d3.csv, "/data/ss.csv", function(d) { rateById.set(d.Zip, +d.Count); })
+    .defer(d3.json, "../../static/json/zips_us_topo.json")
+    .defer(d3.csv, "../../data/ss.csv", function(d) { rateById.set(d.Zip, +d.Count); })
     .await(ready);
 
 function ready(error, us) {
